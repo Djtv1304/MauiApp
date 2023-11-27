@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ProductoPage"
+             Title="ProductoPage">
+    <VerticalStackLayout>
+        
+        <HorizontalStackLayout
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="DarkBlue">
+            
+            <Image Source="dotnet_bot.png" 
+                HeightRequest="100"/>
+            <Label Text="ProductoApp" 
+                FontSize="30"
+                TextColor="White"/>
+       
+        </HorizontalStackLayout>
+        
+        <Button Text="Nuevo Producto"
+                Scale="1.3"
+                HorizontalOptions="Center"
+                Clicked="OnClickNuevoProducto"
+                Margin="0,20,0,0"/>
+
+        <ListView x:Name="listaProductos"
+                  RowHeight="80"
+                  Margin="0,20,0,0"
+                  ItemSelected="onClickShowDetails">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="dotnet_bot.png"
+                                   HeightRequest="70"
+                                   WidthRequest="70">
+                            </Image>
+                            <StackLayout Orientation="Vertical"
+                                         WidthRequest="150">
+                                <!-- Limita el ancho de este StackLayout -->
+                                <Label Text="{Binding Nombre}"
+                                       FontSize="25"/>
+                                <Label Text="{Binding Cantidad}"
+                                       FontSize="20"/>
+                            </StackLayout>
+                            <ImageButton Source="pencil.png"
+                                         Clicked="OnEditClicked"
+                                         WidthRequest="70"
+                                         HeightRequest="70"
+                                         Margin="0,0,10,0"
+                                         BackgroundColor="White"
+                                         CornerRadius="10"
+                            />
+                            
+                            <!-- Añade un margen a la derecha -->
+                            
+                            <ImageButton Source="bin_bounce.png"
+                                    Clicked="OnDeleteClicked"
+                                    WidthRequest="70"
+                                    HeightRequest="70"
+                                    Margin="10,0,0,0"
+                                    BackgroundColor="White"
+                                    CornerRadius="10"
+                            />
+                            
+                            <!-- Añade un margen a la izquierda -->
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

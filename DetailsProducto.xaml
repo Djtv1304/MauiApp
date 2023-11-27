@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.DetailsProducto"
+             Title="DetailsProducto">
+    <VerticalStackLayout>
+        <!-- Formulario de ingreso de producto -->
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Visualizar producto">
+                    <EntryCell x:Name="Nombre"
+                       Placeholder="Nombre"
+                       Text="{Binding Nombre}"/>
+
+                    <EntryCell x:Name="Cantidad"
+                       Placeholder="Cantidad"
+                       Text="{Binding Cantidad}"/>
+
+                    <EntryCell x:Name="Descripcion"
+                       Placeholder="Descripcion"
+                       Text="{Binding Descripcion}"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </VerticalStackLayout>
+</ContentPage>
